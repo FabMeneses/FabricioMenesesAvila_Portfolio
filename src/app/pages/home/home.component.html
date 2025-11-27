@@ -1,101 +1,656 @@
-<section class="grow flex flex-col items-center justify-center w-full px-4 md:px-8 py-8">
-  <div class="text-center max-w-4xl">
-    <h1 class="text-4xl md:text-6xl font-bold text-teal dark:text-cream mb-6">Bienvenido</h1>
-    <p class="text-lg md:text-xl text-dark-brown dark:text-cream/80 mb-8">
-      Desarrollador Web Full Stack y diseñador de interfaces especializado en crear experiencias digitales atractivas y
-      funcionales.
-    </p>
-    <img src="/images/Fab.jpg" alt="Ilustración de desarrollo web"
-      class="mx-auto mb-8 w-64 md:w-80 lg:w-96 rounded-full shadow-xl" />
+<section class="grow w-full px-4 md:px-8 lg:px-16 py-8">
 
-    <!-- Tecnologías que uso -->
-    <div class="mb-12">
-      <h2 class="text-xl md:text-2xl font-semibold text-teal dark:text-cream mb-6">Tecnologías que uso</h2>
-      <div class="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-11 gap-4 md:gap-6 items-center justify-items-center">
-        <div class="group relative">
-          <img src="/icons/angular.svg" alt="Angular"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Framework para aplicaciones web</div>
+  <!-- ========== SECCIÓN INICIO (HERO) ========== -->
+  <div id="inicio" class="scroll-mt-20 mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+
+      <!-- Bento: Presentación Principal (Grande) -->
+      <div appAnimateOnScroll
+        class="animate-fade-up lg:col-span-2 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-8 md:p-12 flex flex-col justify-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-teal dark:text-cream mb-4">Fabricio Meneses Avila
+        </h1>
+        <p class="text-lg md:text-xl text-dark-brown dark:text-cream/80 mb-6">
+          Desarrollador Web Full Stack y diseñador de interfaces especializado en crear experiencias digitales
+          atractivas y funcionales.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#proyectos"
+            class="inline-block px-6 py-3 bg-orange text-cream font-semibold rounded-xl hover:bg-teal transition-colors duration-500 ease-out">
+            Ver Proyectos
+          </a>
+          <a href="#contacto"
+            class="inline-block px-6 py-3 border-2 border-teal text-teal dark:text-cream font-semibold rounded-xl hover:bg-teal hover:text-cream transition-colors duration-500 ease-out">
+            Contáctame
+          </a>
         </div>
-        <div class="group relative">
-          <img src="/icons/typescript.svg" alt="TypeScript"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+      </div>
+
+      <!-- Bento: Foto de Perfil -->
+      <div appAnimateOnScroll
+        class="animate-scale-up animate-delay-200 bg-orange/10 dark:bg-orange/20 border border-orange/30 dark:border-orange/40 rounded-3xl p-8 flex items-center justify-center">
+        <div class="relative group">
+          <!-- Borde decorativo sutil -->
           <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Lenguaje con tipado estático</div>
+            class="absolute -inset-1 bg-gradient-to-br from-teal/40 to-orange/40 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm">
+          </div>
+
+          <img src="/images/Fab.jpg" alt="Fabricio Meneses"
+            class="relative w-48 md:w-56 lg:w-64 aspect-square rounded-2xl object-cover shadow-lg transition-transform duration-500 group-hover:scale-[1.02]" />
         </div>
-        <div class="group relative">
-          <img src="/icons/tailwindcss.svg" alt="Tailwind CSS"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Estilos y diseño responsivo</div>
+      </div>
+
+      <!-- Bento: Estadísticas -->
+      <div appAnimateOnScroll
+        class="animate-fade-up animate-delay-300 bg-brown/10 dark:bg-brown/20 border border-brown/30 dark:border-brown/40 rounded-3xl p-6 flex items-center justify-around">
+        <div class="text-center">
+          <span class="text-3xl md:text-4xl font-bold text-teal dark:text-cream">1</span>
+          <p class="text-sm text-dark-brown dark:text-cream/70">Año de experiencia</p>
         </div>
-        <div class="group relative">
-          <img src="/icons/html5.svg" alt="HTML5"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Estructura y marcado semántico</div>
+        <div class="text-center">
+          <span class="text-3xl md:text-4xl font-bold text-orange">3</span>
+          <p class="text-sm text-dark-brown dark:text-cream/70">Proyectos completados</p>
         </div>
-        <div class="group relative">
-          <img src="/icons/css.svg" alt="CSS"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Animaciones y efectos visuales</div>
+        <div class="text-center">
+          <span class="text-3xl md:text-4xl font-bold text-teal dark:text-cream">+10</span>
+          <p class="text-sm text-dark-brown dark:text-cream/70">Clientes satisfechos</p>
         </div>
-        <div class="group relative">
-          <img src="/icons/dotnet.svg" alt=".NET"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Backend y APIs robustas</div>
-        </div>
-        <div class="group relative">
-          <img src="/icons/laravel.svg" alt="Laravel"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Framework PHP moderno</div>
-        </div>
-        <div class="group relative">
-          <img src="/icons/github.svg" alt="GitHub"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Control de versiones</div>
-        </div>
-        <div class="group relative">
-          <img src="/icons/figma.svg" alt="Figma"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Diseño UI/UX colaborativo</div>
-        </div>
-        <div class="group relative">
-          <img src="/icons/androidstudio.svg" alt="Android Studio"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Desarrollo de apps Android</div>
-        </div>
-        <div class="group relative">
-          <img src="/icons/capacitor.svg" alt="Capacitor"
-            class="w-12 h-12 md:w-14 md:h-14 hover:scale-110 transition-transform duration-200 brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
-          <div
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            Apps móviles híbridas
+      </div>
+
+      <!-- Bento: Tecnologías -->
+      <div appAnimateOnScroll
+        class="animate-fade-up animate-delay-400 lg:col-span-2 bg-cream dark:bg-dark-brown/50 border border-teal/20 dark:border-cream/20 rounded-3xl p-6">
+        <h2 class="text-xl font-semibold text-teal dark:text-cream mb-4">Tecnologías que uso</h2>
+        <div class="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-11 gap-4 items-center justify-items-center">
+          <div class="group relative">
+            <img src="/icons/angular.svg" alt="Angular"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Framework para aplicaciones web</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/typescript.svg" alt="TypeScript"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Lenguaje con tipado estático</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/tailwindcss.svg" alt="Tailwind CSS"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Estilos y diseño responsivo</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/html5.svg" alt="HTML5"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Estructura y marcado semántico</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/css.svg" alt="CSS"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Animaciones y efectos visuales</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/dotnet.svg" alt=".NET"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Backend y APIs robustas</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/laravel.svg" alt="Laravel"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Framework PHP moderno</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/github.svg" alt="GitHub"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Control de versiones</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/figma.svg" alt="Figma"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Diseño UI/UX colaborativo</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/androidstudio.svg" alt="Android Studio"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Desarrollo de apps Android</div>
+          </div>
+          <div class="group relative">
+            <img src="/icons/capacitor.svg" alt="Capacitor"
+              class="w-10 h-10 md:w-12 md:h-12 hover:scale-110 transition-transform duration-500 ease-out brightness-0 invert-[.35] sepia-[1] saturate-[5] hue-rotate-[160deg] dark:invert dark:brightness-100 dark:saturate-0 cursor-help" />
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-teal dark:bg-cream text-cream dark:text-dark-brown text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+              Apps móviles híbridas</div>
           </div>
         </div>
       </div>
     </div>
-
-    <a routerLink="/projects"
-      class="inline-block px-8 py-3 bg-orange text-cream font-semibold rounded-lg hover:bg-teal transition-colors duration-200">
-      Ver Proyectos
-    </a>
   </div>
+
+  <!-- ========== SECCIÓN SOBRE MÍ ========== -->
+  <div id="sobre-mi" class="scroll-mt-20 mb-16">
+    <h2 appAnimateOnScroll
+      class="animate-fade-up text-3xl md:text-4xl font-bold text-teal dark:text-cream mb-8 text-center">Sobre mí</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+
+      <!-- Bento: Bio -->
+      <div appAnimateOnScroll
+        class="animate-fade-up animate-delay-100 md:col-span-2 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-8">
+        <h3 class="text-xl font-semibold text-teal dark:text-cream mb-4">Mi Historia</h3>
+        <p class="text-dark-brown dark:text-cream/80 mb-4">
+          Soy un desarrollador que le gusta crear soluciones digitales que marquen la diferencia. Con más de 1 año
+          de experiencia en desarrollo web y móvil, he trabajado en proyectos variados que van desde aplicaciones de
+          administracion empresarial,
+          asi como plataformas de administracion medica.
+        </p>
+        <p class="text-dark-brown dark:text-cream/80">
+          Mi enfoque combina la funcionalidad técnica con un diseño centrado en el usuario, asegurando que cada
+          proyecto no solo funcione perfectamente, sino que también ofrezca una experiencia excepcional.
+        </p>
+      </div>
+
+      <!-- Bento: Educación -->
+      <div appAnimateOnScroll
+        class="animate-fade-up animate-delay-200 bg-orange/10 dark:bg-orange/20 border border-orange/30 dark:border-orange/40 rounded-3xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-orange/20 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-teal dark:text-cream">Educación</h3>
+        </div>
+        <ul class="space-y-3 text-dark-brown dark:text-cream/80">
+          <li class="border-l-2 border-orange pl-4">
+            <p class="font-medium">Ingeniería en software</p>
+            <p class="text-sm opacity-70">Universidad Politecnica de Pachuca • 2022-2025</p>
+          </li>
+          <li class="border-l-2 border-orange pl-4">
+            <p class="font-medium">
+              Certificado EF SET Inglés</p>
+            <p class="text-sm opacity-70">B2 Intermedio/Alto • 2025</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bento: Servicios -->
+      <div appAnimateOnScroll
+        class="animate-fade-up animate-delay-250 bg-brown/10 dark:bg-brown/20 border border-brown/30 dark:border-brown/40 rounded-3xl p-6">
+        <h3 class="text-xl font-semibold text-teal dark:text-cream mb-4">Servicios</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-dark-brown dark:text-cream/80">
+            <span class="w-2 h-2 bg-orange rounded-full"></span>
+            Desarrollo Frontend
+          </li>
+          <li class="flex items-center gap-3 text-dark-brown dark:text-cream/80">
+            <span class="w-2 h-2 bg-teal rounded-full"></span>
+            Desarrollo Backend
+          </li>
+          <li class="flex items-center gap-3 text-dark-brown dark:text-cream/80">
+            <span class="w-2 h-2 bg-orange rounded-full"></span>
+            Diseño UI/UX
+          </li>
+          <li class="flex items-center gap-3 text-dark-brown dark:text-cream/80">
+            <span class="w-2 h-2 bg-teal rounded-full"></span>
+            Apps Móviles Híbridas Con Capacitor
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bento: Experiencia Laboral -->
+      <div appAnimateOnScroll
+        class="animate-fade-up animate-delay-250 lg:col-span-2 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-6">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 bg-teal/20 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-teal dark:text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-teal dark:text-cream">Experiencia Laboral</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Fundación AXiO -->
+          <div class="border-l-2 border-teal pl-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="font-semibold text-teal dark:text-cream">Fundación AXiO</p>
+              <span class="text-xs bg-teal/20 text-teal dark:text-cream px-2 py-1 rounded-full">Full Stack</span>
+            </div>
+            <p class="text-sm text-dark-brown dark:text-cream/70 mb-3">Plataforma de gestion administrativa en conjunto con app para cursos y aprendizaje</p>
+            <ul class="space-y-1.5 text-sm text-dark-brown dark:text-cream/80">
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+                Panel de noticias y blog corporativo
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+                Sistema de notificaciones interconectadas
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+                Integración de aplicaciones multiplataforma
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+                APIs REST y gestión de bases de datos
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+                Rediseño general para un sitio web multiplataforma
+              </li>
+            </ul>
+          </div>
+          <!-- EveryMed -->
+          <div class="border-l-2 border-orange pl-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="font-semibold text-teal dark:text-cream">EveryMed</p>
+              <span class="text-xs bg-orange/20 text-orange px-2 py-1 rounded-full">Proyecto Propio</span>
+            </div>
+            <p class="text-sm text-dark-brown dark:text-cream/70 mb-3">Plataforma de Gestión Médica para medicos individuales y clinicas</p>
+            <ul class="space-y-1.5 text-sm text-dark-brown dark:text-cream/80">
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+                Autenticación y sistema de roles
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+                Expedientes médicos (NOM-024-SSA3)
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+                Gestión de citas y notificaciones en tiempo real
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+                Módulo de farmacia y planes médicos
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+                Perfiles personalizables y dashboard analítico
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+                Seccion de finanzas y facturación
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+                Procesamiento de pagos en línea por medio de stripe y gestion de planes de suscripción
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento: Habilidades -->
+      <div appAnimateOnScroll
+        class="animate-fade-up animate-delay-300 lg:col-span-3 bg-cream dark:bg-dark-brown/50 border border-teal/20 dark:border-cream/20 rounded-3xl p-6">
+        <h3 class="text-xl font-semibold text-teal dark:text-cream mb-6">Habilidades</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-6 gap-y-4">
+          <!-- Angular -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">Angular</span>
+              <span class="text-sm text-orange">90%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-teal rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          <!-- TypeScript -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">TypeScript</span>
+              <span class="text-sm text-orange">90%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-orange rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          <!-- Tailwind CSS -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">Tailwind CSS</span>
+              <span class="text-sm text-orange">95%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-teal rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+          <!-- HTML5 -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">HTML5</span>
+              <span class="text-sm text-orange">95%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-orange rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+          <!-- CSS3 -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">CSS3</span>
+              <span class="text-sm text-orange">90%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-teal rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          <!-- .NET -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">.NET</span>
+              <span class="text-sm text-orange">80%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-orange rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <!-- Laravel -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">Laravel</span>
+              <span class="text-sm text-orange">75%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-teal rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+          <!-- GitHub -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">Git / GitHub</span>
+              <span class="text-sm text-orange">85%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-orange rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <!-- Figma -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">Figma</span>
+              <span class="text-sm text-orange">80%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-teal rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <!-- Android Studio -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">Android Studio</span>
+              <span class="text-sm text-orange">70%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-orange rounded-full" style="width: 70%"></div>
+            </div>
+          </div>
+          <!-- Capacitor -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">Capacitor</span>
+              <span class="text-sm text-orange">85%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-teal rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <!-- SQL -->
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm text-dark-brown dark:text-cream/80">SQL Server</span>
+              <span class="text-sm text-orange">80%</span>
+            </div>
+            <div class="h-2 bg-teal/20 rounded-full">
+              <div class="h-full bg-orange rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN PROYECTOS ========== -->
+  <div id="proyectos" class="scroll-mt-20 mb-16">
+    <h2 appAnimateOnScroll
+      class="animate-fade-up text-3xl md:text-4xl font-bold text-teal dark:text-cream mb-8 text-center">Proyectos</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+
+      <!-- Proyecto 1 -->
+      <div appAnimateOnScroll
+        class="animate-scale-up animate-delay-100 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-700 ease-out">
+        <div class="h-48 bg-gradient-to-br from-teal to-orange/50 flex items-center justify-center">
+          <svg class="w-16 h-16 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-teal dark:text-cream mb-2">E-Commerce Platform</h3>
+          <p class="text-dark-brown dark:text-cream/70 text-sm mb-4">Plataforma de comercio electrónico completa con
+            carrito, pagos y panel de administración.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full">Angular</span>
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full">.NET</span>
+            <span class="px-3 py-1 bg-brown/20 text-brown dark:text-cream text-xs rounded-full">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div appAnimateOnScroll
+        class="animate-scale-up animate-delay-200 bg-orange/10 dark:bg-orange/20 border border-orange/30 dark:border-orange/40 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-700 ease-out">
+        <div class="h-48 bg-gradient-to-br from-orange to-brown/50 flex items-center justify-center">
+          <svg class="w-16 h-16 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-teal dark:text-cream mb-2">App de Delivery</h3>
+          <p class="text-dark-brown dark:text-cream/70 text-sm mb-4">Aplicación móvil para gestión de pedidos y
+            entregas en tiempo real con geolocalización.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full">Ionic</span>
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full">Capacitor</span>
+            <span class="px-3 py-1 bg-brown/20 text-brown dark:text-cream text-xs rounded-full">Firebase</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div appAnimateOnScroll
+        class="animate-scale-up animate-delay-300 bg-brown/10 dark:bg-brown/20 border border-brown/30 dark:border-brown/40 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-700 ease-out">
+        <div class="h-48 bg-gradient-to-br from-brown to-teal/50 flex items-center justify-center">
+          <svg class="w-16 h-16 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-teal dark:text-cream mb-2">Dashboard Analytics</h3>
+          <p class="text-dark-brown dark:text-cream/70 text-sm mb-4">Panel de control con gráficos interactivos y
+            reportes en tiempo real para toma de decisiones.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full">Angular</span>
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full">Chart.js</span>
+            <span class="px-3 py-1 bg-brown/20 text-brown dark:text-cream text-xs rounded-full">Laravel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div appAnimateOnScroll
+        class="animate-fade-up animate-delay-400 md:col-span-2 bg-cream dark:bg-dark-brown/50 border border-teal/20 dark:border-cream/20 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-700 ease-out">
+        <div class="flex flex-col md:flex-row">
+          <div class="h-48 md:h-auto md:w-1/3 bg-gradient-to-br from-teal to-orange flex items-center justify-center">
+            <svg class="w-16 h-16 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <div class="p-6 md:w-2/3">
+            <h3 class="text-xl font-semibold text-teal dark:text-cream mb-2">Sistema de Gestión Empresarial</h3>
+            <p class="text-dark-brown dark:text-cream/70 text-sm mb-4">Sistema integral para gestión de inventarios,
+              facturación, recursos humanos y reportes financieros. Implementado para una empresa con más de 100
+              empleados.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full">Angular</span>
+              <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full">.NET Core</span>
+              <span class="px-3 py-1 bg-brown/20 text-brown dark:text-cream text-xs rounded-full">SQL Server</span>
+              <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full">Azure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ver más proyectos -->
+      <div appAnimateOnScroll
+        class="animate-scale-up animate-delay-500 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-6 flex flex-col items-center justify-center text-center hover:bg-teal/20 transition-colors duration-700 ease-out cursor-pointer">
+        <svg class="w-12 h-12 text-teal dark:text-cream mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+        <p class="text-teal dark:text-cream font-semibold">Ver más proyectos</p>
+        <p class="text-dark-brown dark:text-cream/60 text-sm">en mi GitHub</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECCIÓN CONTACTO ========== -->
+  <div id="contacto" class="scroll-mt-20 mb-8">
+    <h2 appAnimateOnScroll
+      class="animate-fade-up text-3xl md:text-4xl font-bold text-teal dark:text-cream mb-8 text-center">Contacto</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+
+      <!-- Bento: Formulario -->
+      <div appAnimateOnScroll
+        class="animate-fade-right animate-delay-100 lg:col-span-2 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-8">
+        <h3 class="text-xl font-semibold text-teal dark:text-cream mb-6">Envíame un mensaje</h3>
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-dark-brown dark:text-cream/80 mb-2">Nombre</label>
+              <input type="text" placeholder="Tu nombre"
+                class="w-full px-4 py-3 rounded-xl bg-cream dark:bg-dark-brown border border-teal/30 dark:border-cream/30 text-dark-brown dark:text-cream focus:outline-none focus:ring-2 focus:ring-orange transition-all" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-dark-brown dark:text-cream/80 mb-2">Email</label>
+              <input type="email" placeholder="tu@email.com"
+                class="w-full px-4 py-3 rounded-xl bg-cream dark:bg-dark-brown border border-teal/30 dark:border-cream/30 text-dark-brown dark:text-cream focus:outline-none focus:ring-2 focus:ring-orange transition-all" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-dark-brown dark:text-cream/80 mb-2">Asunto</label>
+            <input type="text" placeholder="¿En qué puedo ayudarte?"
+              class="w-full px-4 py-3 rounded-xl bg-cream dark:bg-dark-brown border border-teal/30 dark:border-cream/30 text-dark-brown dark:text-cream focus:outline-none focus:ring-2 focus:ring-orange transition-all" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-dark-brown dark:text-cream/80 mb-2">Mensaje</label>
+            <textarea rows="4" placeholder="Cuéntame sobre tu proyecto..."
+              class="w-full px-4 py-3 rounded-xl bg-cream dark:bg-dark-brown border border-teal/30 dark:border-cream/30 text-dark-brown dark:text-cream focus:outline-none focus:ring-2 focus:ring-orange transition-all resize-none"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full md:w-auto px-8 py-3 bg-orange text-cream font-semibold rounded-xl hover:bg-teal transition-colors duration-500 ease-out">
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+
+      <!-- Bento: Info de contacto -->
+      <div class="space-y-4">
+        <!-- Email -->
+        <div appAnimateOnScroll
+          class="animate-fade-left animate-delay-200 bg-orange/10 dark:bg-orange/20 border border-orange/30 dark:border-orange/40 rounded-3xl p-6 hover:scale-[1.02] transition-transform duration-700 ease-out">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-orange/20 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-dark-brown dark:text-cream/60">Email</p>
+              <p class="text-teal dark:text-cream font-medium">contacto&#64;fabmeneses.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div appAnimateOnScroll
+          class="animate-fade-left animate-delay-300 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-6 hover:scale-[1.02] transition-transform duration-700 ease-out">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-teal/20 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-teal dark:text-cream" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-dark-brown dark:text-cream/60">LinkedIn</p>
+              <p class="text-teal dark:text-cream font-medium">/in/fabmeneses</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub -->
+        <div appAnimateOnScroll
+          class="animate-fade-left animate-delay-400 bg-brown/10 dark:bg-brown/20 border border-brown/30 dark:border-brown/40 rounded-3xl p-6 hover:scale-[1.02] transition-transform duration-700 ease-out">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-brown/20 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-brown dark:text-cream" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-dark-brown dark:text-cream/60">GitHub</p>
+              <p class="text-teal dark:text-cream font-medium">&#64;FabMeneses</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ubicación -->
+        <div appAnimateOnScroll
+          class="animate-fade-left animate-delay-500 bg-cream dark:bg-dark-brown/50 border border-teal/20 dark:border-cream/20 rounded-3xl p-6 hover:scale-[1.02] transition-transform duration-700 ease-out">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-teal/20 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-teal dark:text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-dark-brown dark:text-cream/60">Ubicación</p>
+              <p class="text-teal dark:text-cream font-medium">Ciudad de México, MX</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>

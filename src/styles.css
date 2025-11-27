@@ -1,3 +1,141 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tailwind CSS v4 */
+@import 'tailwindcss';
 
-@import "tailwindcss";
+/* Configuración de tema con @theme */
+@theme {
+  /* Colores personalizados */
+  --color-cream: #ffecd1;
+  --color-dark-brown: #291A0E;
+  --color-teal: #15616d;
+  --color-orange: #ff7d00;
+  --color-brown: #78290f;
+  --color-darker-brown: #110b06;
+
+  /* Animaciones personalizadas */
+  --animate-gradient: gradient 20s ease infinite;
+  --animate-blob: blob 7s infinite;
+  --animate-blob2: blob 9s infinite 2s;
+  --animate-blob3: blob 12s infinite 4s;
+}
+
+/* Keyframes para gradiente animado */
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Keyframes para círculos flotantes */
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Estilos base globales */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar personalizado */
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(21 97 109 / 0.4);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(21 97 109 / 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #110b06;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(255 125 0 / 0.6);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(255 125 0 / 0.9);
+  }
+}
+
+/* Scrollbar para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(21 97 109 / 0.4) transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    scrollbar-color: rgb(70, 40, 14) #110b06;
+  }
+}
+
+/* Estilos del scrollbar para modales - modo claro */
+.modal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(21 97 109 / 0.3);
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(21 97 109 / 0.6);
+}
+
+/* Estilos del scrollbar para modales - modo oscuro */
+.dark .modal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(255 125 0 / 0.4);
+}
+
+.dark .modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(255 125 0 / 0.7);
+}
+
+/* Compatibilidad con Firefox para scrollbar de modales */
+.modal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(21 97 109 / 0.3) transparent;
+}
+
+.dark .modal-scrollbar {
+  scrollbar-color: rgb(255 125 0 / 0.4) transparent;
+}

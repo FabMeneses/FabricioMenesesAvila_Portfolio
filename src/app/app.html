@@ -1,4 +1,4 @@
-<div class="min-h-screen flex flex-col relative bg-cream dark:bg-darker-brown">
+<div class="min-h-screen flex flex-col relative bg-cream dark:bg-darker-brown overflow-x-hidden">
   <!-- Círculos de gradiente animados -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <!-- Círculo 1 -->
@@ -15,14 +15,17 @@
     </div>
   </div>
 
-  <!-- Header sticky -->
-  <app-header class="sticky top-0 z-50" />
+  <!-- Header - fixed en móvil, sticky en escritorio -->
+  <app-header />
 
-  <!-- Contenido por encima del gradiente -->
-  <div class="relative z-10 flex flex-col grow">
+  <!-- Contenido por encima del gradiente - con padding para header y bottom nav -->
+  <div class="relative z-10 flex flex-col grow pt-14 sm:pt-16 md:pt-0 pb-16 sm:pb-20 md:pb-0">
     <main class="grow flex flex-col">
       <router-outlet />
     </main>
     <app-footer />
   </div>
+
+  <!-- Bottom Navigation - Fuera del contenedor para que funcione con fixed -->
+  <app-bottom-nav />
 </div>

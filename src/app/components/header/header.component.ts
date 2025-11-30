@@ -1,21 +1,11 @@
-import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   imports: [],
   templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block w-full shrink-0' },
 })
-export class HeaderComponent {
-  protected readonly isMobileMenuOpen = signal(false);
-
-  protected toggleMobileMenu(): void {
-    this.isMobileMenuOpen.update((value) => !value);
-  }
-
-  protected closeMobileMenu(): void {
-    this.isMobileMenuOpen.set(false);
-  }
-}
+export class HeaderComponent {}

@@ -1,3 +1,210 @@
 <section class="grow flex flex-col w-full px-4 md:px-8 py-8">
-  <!-- Tu contenido aquí -->
+  <h1 appAnimateOnScroll
+    class="animate-fade-up text-3xl md:text-4xl font-bold text-teal dark:text-cream mb-8 text-center">
+    Proyectos Desarrollados
+  </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto w-full">
+
+    <!-- EveryMed Admin - Frontend -->
+    <div appAnimateOnScroll
+      class="animate-scale-up animate-delay-100 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-700 ease-out">
+      <div class="h-48 bg-gradient-to-br from-teal to-orange/50 flex items-center justify-center">
+        <svg class="w-20 h-20 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-2xl font-semibold text-teal dark:text-cream">EveryMed Admin</h3>
+          <div class="flex gap-2">
+            <span class="text-xs bg-orange/20 text-orange px-3 py-1 rounded-full font-semibold">Proyecto Propio</span>
+            <span class="text-xs bg-teal/20 text-teal dark:text-cream px-3 py-1 rounded-full font-semibold">Frontend</span>
+          </div>
+        </div>
+        <p class="text-dark-brown dark:text-cream/70 text-sm mb-4">
+          Aplicación web progresiva (PWA) para gestión médica desarrollada con Angular 20. Plataforma completa para
+          administración de clínicas, expedientes médicos, citas y más.
+        </p>
+
+        <div class="mb-4">
+          <h4 class="text-sm font-semibold text-teal dark:text-cream mb-2">Características principales:</h4>
+          <ul class="space-y-1.5 text-sm text-dark-brown dark:text-cream/80">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+              <span>Progressive Web App (PWA) con soporte offline</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+              <span>Autenticación JWT y sistema de roles (admin, doctor, secretary, pharmaceutical)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+              <span>Módulos: Dashboard, Agenda, Expedientes, Finanzas, Farmacia, Inventario</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+              <span>Expedientes médicos conforme a NOM-024-SSA3</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+              <span>Notificaciones en tiempo real y gestión de citas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+              <span>Despliegue nativo con Capacitor (Android/iOS)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h4 class="text-sm font-semibold text-teal dark:text-cream mb-2">Stack tecnológico:</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full font-medium">Angular 20</span>
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full font-medium">TypeScript</span>
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full font-medium">Tailwind CSS 4</span>
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full font-medium">Capacitor 7</span>
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full font-medium">PWA</span>
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full font-medium">Signals</span>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-teal/20 dark:border-cream/20">
+          <p class="text-xs text-dark-brown dark:text-cream/60">
+            <span class="font-semibold">Arquitectura:</span> Standalone Components, OnPush Change Detection, Lazy Loading
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EveryMed API - Backend -->
+    <div appAnimateOnScroll
+      class="animate-scale-up animate-delay-200 bg-orange/10 dark:bg-orange/20 border border-orange/30 dark:border-orange/40 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-transform duration-700 ease-out">
+      <div class="h-48 bg-gradient-to-br from-orange to-brown/50 flex items-center justify-center">
+        <svg class="w-20 h-20 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+        </svg>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-2xl font-semibold text-teal dark:text-cream">EveryMed API</h3>
+          <div class="flex gap-2">
+            <span class="text-xs bg-orange/20 text-orange px-3 py-1 rounded-full font-semibold">Proyecto Propio</span>
+            <span class="text-xs bg-teal/20 text-teal dark:text-cream px-3 py-1 rounded-full font-semibold">Backend</span>
+          </div>
+        </div>
+        <p class="text-dark-brown dark:text-cream/70 text-sm mb-4">
+          API REST robusta desarrollada con .NET 9 siguiendo Clean Architecture. Proporciona servicios esenciales para
+          la gestión médica con autenticación JWT, gestión de expedientes y más.
+        </p>
+
+        <div class="mb-4">
+          <h4 class="text-sm font-semibold text-teal dark:text-cream mb-2">Características principales:</h4>
+          <ul class="space-y-1.5 text-sm text-dark-brown dark:text-cream/80">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+              <span>Arquitectura limpia (Clean Architecture) con separación de capas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+              <span>Autenticación JWT con refresh tokens y políticas de autorización</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+              <span>Módulos: Auth, Users, Patients, Medical Records, Appointments, Pharmacy</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+              <span>Entity Framework Core con SQL Server</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+              <span>Notificaciones y recordatorios automáticos</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+              <span>Swagger/OpenAPI para documentación interactiva</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h4 class="text-sm font-semibold text-teal dark:text-cream mb-2">Stack tecnológico:</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full font-medium">.NET 9</span>
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full font-medium">ASP.NET Core</span>
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full font-medium">Entity Framework</span>
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full font-medium">SQL Server</span>
+            <span class="px-3 py-1 bg-orange/20 text-orange text-xs rounded-full font-medium">JWT Bearer</span>
+            <span class="px-3 py-1 bg-teal/20 text-teal dark:text-cream text-xs rounded-full font-medium">Swagger</span>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-orange/20 dark:border-cream/20">
+          <p class="text-xs text-dark-brown dark:text-cream/60">
+            <span class="font-semibold">Arquitectura:</span> Domain, Application, Infrastructure, Presentation layers
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Información adicional sobre el proyecto conjunto -->
+  <div appAnimateOnScroll
+    class="animate-fade-up animate-delay-300 mt-8 max-w-7xl mx-auto w-full bg-cream dark:bg-dark-brown/50 border border-teal/20 dark:border-cream/20 rounded-3xl p-6 md:p-8">
+    <h3 class="text-xl font-semibold text-teal dark:text-cream mb-4">Sobre EveryMed</h3>
+    <p class="text-dark-brown dark:text-cream/70 text-sm mb-4">
+      EveryMed es una plataforma completa de gestión médica diseñada para médicos individuales y clínicas. El sistema
+      integra un frontend moderno (EveryMed Admin) con una API robusta (EveryMed API) para proporcionar una solución
+      integral en el sector de la salud.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <h4 class="text-sm font-semibold text-teal dark:text-cream mb-2">Funcionalidades del sistema:</h4>
+        <ul class="space-y-1 text-sm text-dark-brown dark:text-cream/80">
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+            Gestión de expedientes médicos digitales
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+            Sistema de citas y agenda médica
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+            Módulo de farmacia con inventario
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 bg-teal rounded-full mt-1.5 shrink-0"></span>
+            Finanzas y facturación
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-teal dark:text-cream mb-2">Tecnologías integradas:</h4>
+        <ul class="space-y-1 text-sm text-dark-brown dark:text-cream/80">
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+            Comunicación REST API con JWT
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+            Base de datos relacional SQL Server
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+            Notificaciones en tiempo real
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 bg-orange rounded-full mt-1.5 shrink-0"></span>
+            Servicio de correo electrónico (MailKit)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
 </section>

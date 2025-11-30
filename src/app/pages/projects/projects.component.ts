@@ -1,8 +1,9 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { AnimateOnScrollDirective } from '../../directives/animate-on-scroll.directive';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [AnimateOnScrollDirective],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

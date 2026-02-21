@@ -1,0 +1,29 @@
+<section class="grow flex flex-col items-center justify-center w-full px-4 py-24 text-center">
+  <div class="max-w-lg mx-auto">
+
+    <!-- Error code -->
+    <div class="relative inline-block mb-6">
+      <span class="text-[9rem] font-bold text-teal/10 dark:text-cream/5 leading-none select-none">404</span>
+      <span class="absolute inset-0 flex items-center justify-center text-6xl md:text-7xl font-bold text-teal dark:text-cream">
+        404
+      </span>
+    </div>
+
+    <h1 class="text-2xl md:text-3xl font-bold text-orange mb-3">Página no encontrada</h1>
+    <p class="text-dark-brown dark:text-cream/70 mb-10 text-lg">
+      Esta página no existe o fue movida a otra dirección.
+    </p>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a routerLink="/"
+        class="px-6 py-3 bg-orange text-cream font-semibold rounded-xl hover:bg-teal transition-colors duration-300">
+        Volver al inicio
+      </a>
+      <a routerLink="/" fragment="proyectos"
+        class="px-6 py-3 border-2 border-teal text-teal dark:text-cream font-semibold rounded-xl hover:bg-teal hover:text-cream transition-colors duration-300">
+        Ver proyectos
+      </a>
+    </div>
+
+  </div>
+</section>

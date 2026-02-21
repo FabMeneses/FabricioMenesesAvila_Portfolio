@@ -1,0 +1,20 @@
+{
+  "name": "Fabricio Meneses Avila — Portfolio",
+  "short_name": "Fab Portfolio",
+  "description": "Portfolio de Fabricio Meneses Avila, Desarrollador Web Full Stack especializado en Angular, .NET y diseño UI/UX.",
+  "theme_color": "#15616d",
+  "background_color": "#ffecd1",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

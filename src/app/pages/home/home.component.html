@@ -39,8 +39,8 @@
             class="inline-block px-6 py-3 border-2 border-teal text-teal dark:text-cream font-semibold rounded-xl hover:bg-teal hover:text-cream transition-colors duration-500 ease-out">
             {{ t().hero_cta_contact }}
           </a>
-          <a href="/cv/FabricioMenesesAvila_CV_Dev.pdf"
-            download="FabricioMenesesAvila_CV_Dev.pdf"
+          <a [href]="cvDevUrl()"
+            [download]="cvDevUrl().split('/').pop()"
             class="inline-flex items-center gap-2 px-6 py-3 border-2 border-orange text-orange font-semibold rounded-xl hover:bg-orange hover:text-cream transition-colors duration-500 ease-out">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -48,8 +48,8 @@
             </svg>
             {{ t().hero_cta_cv_dev }}
           </a>
-          <a href="/cv/FabricioMenesesAvila_CV_IT.pdf"
-            download="FabricioMenesesAvila_CV_IT.pdf"
+          <a [href]="cvItUrl()"
+            [download]="cvItUrl().split('/').pop()"
             class="inline-flex items-center gap-2 px-6 py-3 border-2 border-teal text-teal dark:text-cream font-semibold rounded-xl hover:bg-teal hover:text-cream transition-colors duration-500 ease-out">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

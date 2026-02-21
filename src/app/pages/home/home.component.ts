@@ -34,6 +34,18 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   // Availability badge
   readonly isAvailable = signal(true);
 
+  // CV download URLs based on language
+  readonly cvDevUrl = computed(() =>
+    this.langSvc.lang() === 'en'
+      ? '/cv/FabricioMenesesAvila_CV_EN.pdf'
+      : '/cv/FabricioMenesesAvila_CV.pdf'
+  );
+  readonly cvItUrl = computed(() =>
+    this.langSvc.lang() === 'en'
+      ? '/cv/FabricioMenesesAvila_IT_CV_EN.pdf'
+      : '/cv/FabricioMenesesAvila_IT_CV.pdf'
+  );
+
   // Stats counters
   readonly displayYear = signal(0);
   readonly displayProjects = signal(0);

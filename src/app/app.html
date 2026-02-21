@@ -15,14 +15,17 @@
     </div>
   </div>
 
-  <!-- Header sticky -->
-  <app-header class="sticky top-0 z-50" />
+  <!-- Header fixed -->
+  <app-header class="fixed top-0 left-0 right-0 z-50" />
 
   <!-- Contenido por encima del gradiente -->
-  <div class="relative z-10 flex flex-col grow">
+  <div class="relative z-10 flex flex-col grow pt-16">
     <main class="grow flex flex-col">
       <router-outlet />
     </main>
     <app-footer />
   </div>
+
+  <!-- Botón volver arriba -->
+  <app-scroll-to-top />
 </div>

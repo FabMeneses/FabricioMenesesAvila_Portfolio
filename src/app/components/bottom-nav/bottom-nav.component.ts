@@ -1,20 +1,20 @@
 import { Component, ChangeDetectionStrategy, signal, inject, DestroyRef, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-bottom-nav',
-  standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './bottom-nav.component.html',
   styleUrl: './bottom-nav.component.css',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block w-full shrink-0' },
 })
 export class BottomNavComponent implements OnInit, OnDestroy {
   protected readonly activeSection = signal<string>('inicio');
+  private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
   private readonly isBrowser = typeof window !== 'undefined';
 
@@ -72,30 +72,46 @@ export class BottomNavComponent implements OnInit, OnDestroy {
     }
   }
 
-  protected scrollToSection(section: string): void {
+  protected async scrollToSection(section: string): Promise<void> {
     if (!this.isBrowser) return;
+
+    this.activeSection.set(section);
 
     const element = document.getElementById(section);
     if (element) {
-      const headerHeight = 64; // Altura aproximada del header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+      this.scrollToElement(element);
 
       // Actualizar sección activa después de un pequeño delay
       setTimeout(() => {
         this.activeSection.set(section);
         this.updateActiveSection();
       }, 300);
+      return;
     }
+
+    await this.router.navigate(['/'], { fragment: section });
+
+    setTimeout(() => {
+      const target = document.getElementById(section);
+      if (target) {
+        this.scrollToElement(target);
+      }
+    }, 150);
   }
 
   protected isActive(section: string): boolean {
     return this.activeSection() === section;
+  }
+
+  private scrollToElement(element: HTMLElement): void {
+    const headerHeight = 96;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
   }
 }
 

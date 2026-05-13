@@ -4,7 +4,7 @@ import { Directive, ElementRef, inject, OnInit, OnDestroy, input } from '@angula
   selector: '[appAnimateOnScroll]',
 })
 export class AnimateOnScrollDirective implements OnInit, OnDestroy {
-  private el = inject(ElementRef);
+  private el = inject<ElementRef<HTMLElement>>(ElementRef);
   private observer: IntersectionObserver | null = null;
 
   /** Threshold para activar la animación (0-1) */
@@ -22,6 +22,21 @@ export class AnimateOnScrollDirective implements OnInit, OnDestroy {
   }
 
   private setupObserver(): void {
+    const element = this.el.nativeElement;
+
+    if (
+      !element.classList.contains('animate-on-scroll') &&
+      !element.className.includes('animate-fade') &&
+      !element.classList.contains('animate-scale-up')
+    ) {
+      element.classList.add('animate-fade-up');
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      element.classList.add('animate-visible');
+      return;
+    }
+
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px 0px -50px 0px',
@@ -42,6 +57,6 @@ export class AnimateOnScrollDirective implements OnInit, OnDestroy {
       });
     }, options);
 
-    this.observer.observe(this.el.nativeElement);
+    this.observer.observe(element);
   }
 }

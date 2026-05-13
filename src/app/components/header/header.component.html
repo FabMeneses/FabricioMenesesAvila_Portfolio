@@ -1,105 +1,158 @@
-<header class="bg-cream/80 dark:bg-dark-brown/80 backdrop-blur-md shadow-md z-50 transition-colors duration-300">
-  <nav class="w-full px-6 lg:px-12">
-    <!-- Contenedor principal con grid de 3 columnas -->
-    <div class="h-16 grid grid-cols-2 md:grid-cols-3 items-center">
-      <!-- Logo - Izquierda -->
-      <a href="#inicio"
-        class="text-2xl lg:text-3xl font-bold text-teal dark:text-cream hover:text-orange dark:hover:text-orange transition-colors duration-200">
-        Fab_Portfolio
+<header class="px-3 py-3 transition-colors duration-300 sm:px-5 lg:px-8">
+  <nav
+    class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 rounded-2xl border border-white/50 bg-cream/86 px-3 shadow-lg shadow-brown/10 backdrop-blur-xl dark:border-cream/10 dark:bg-darker-brown/82 dark:shadow-black/30 sm:px-4"
+    aria-label="Navegación principal">
+    <a
+      routerLink="/"
+      fragment="inicio"
+      (click)="selectFragment('inicio')"
+      class="group flex min-w-0 items-center gap-3 rounded-xl pr-2 text-dark-brown transition-colors duration-200 hover:text-teal dark:text-cream dark:hover:text-orange"
+      aria-label="Fab Portfolio">
+      <span
+        class="size-11 shrink-0 overflow-hidden rounded-xl border-2 border-teal bg-teal shadow-md shadow-teal/20 transition-transform duration-200 group-hover:-translate-y-0.5 dark:border-orange dark:bg-orange">
+        <img
+          ngSrc="/images/Fab.jpg"
+          width="44"
+          height="44"
+          priority
+          alt="Fabricio Meneses"
+          class="size-full object-cover" />
+      </span>
+      <span class="min-w-0 leading-tight">
+        <span class="block truncate text-base font-black sm:text-lg">Fabricio Meneses Avila</span>
+        <span class="hidden truncate text-xs font-semibold text-brown/70 dark:text-cream/60 sm:block">
+          Software Engineer
+        </span>
+      </span>
+    </a>
+
+    <div
+      class="hidden items-center rounded-full border border-teal/10 bg-white/35 p-1 shadow-inner shadow-white/40 dark:border-cream/10 dark:bg-cream/5 lg:flex">
+      @for (item of navItems(); track item.fragment) {
+        <a
+          routerLink="/"
+          [fragment]="item.fragment"
+          (click)="selectFragment(item.fragment)"
+          [class]="navItemClass(item.fragment)">
+          {{ item.label }}
+        </a>
+      }
+    </div>
+
+    <div class="flex shrink-0 items-center justify-end gap-2">
+      <a
+        [href]="cvDevUrl()"
+        [download]="cvDevUrl().split('/').pop()"
+        class="hidden items-center gap-2 rounded-xl bg-orange px-3.5 py-2 text-sm font-bold text-darker-brown shadow-md shadow-orange/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/60 focus-visible:ring-offset-2 focus-visible:ring-offset-cream dark:ring-offset-darker-brown md:flex">
+        <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+        </svg>
+        <span>{{ t().nav_cv }}</span>
       </a>
 
-      <!-- Navegación - Centro -->
-      <div class="hidden md:flex items-center justify-center gap-6 lg:gap-8">
-        <a href="#inicio"
-          class="text-lg text-dark-brown dark:text-cream hover:text-orange dark:hover:text-orange transition-colors duration-200 relative group">
-          {{ t().nav_home }}
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange group-hover:w-full transition-all duration-300"></span>
-        </a>
-        <a href="#sobre-mi"
-          class="text-lg text-dark-brown dark:text-cream hover:text-orange dark:hover:text-orange transition-colors duration-200 relative group">
-          {{ t().nav_about }}
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange group-hover:w-full transition-all duration-300"></span>
-        </a>
-        <a href="#conocimientos-ti"
-          class="text-lg text-dark-brown dark:text-cream hover:text-orange dark:hover:text-orange transition-colors duration-200 relative group">
-          {{ t().nav_knowledge }}
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange group-hover:w-full transition-all duration-300"></span>
-        </a>
-        <a href="#proyectos"
-          class="text-lg text-dark-brown dark:text-cream hover:text-orange dark:hover:text-orange transition-colors duration-200 relative group">
-          {{ t().nav_projects }}
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange group-hover:w-full transition-all duration-300"></span>
-        </a>
-        <a href="#contacto"
-          class="text-lg text-dark-brown dark:text-cream hover:text-orange dark:hover:text-orange transition-colors duration-200 relative group">
-          {{ t().nav_contact }}
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange group-hover:w-full transition-all duration-300"></span>
-        </a>
-      </div>
+      <button
+        type="button"
+        (click)="langSvc.toggle()"
+        [attr.aria-label]="langSvc.lang() === 'es' ? 'Switch to English' : 'Cambiar a Español'"
+        class="group hidden size-11 place-items-center rounded-xl border border-teal/20 bg-white/35 text-teal shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/60 focus-visible:ring-offset-2 focus-visible:ring-offset-cream dark:border-cream/15 dark:bg-cream/5 dark:text-cream dark:hover:bg-orange dark:hover:text-darker-brown dark:focus-visible:ring-offset-darker-brown sm:grid">
+        <svg class="size-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+      </button>
 
-      <!-- Botón menú móvil - Derecha -->
-      <div class="flex items-center justify-end gap-4">
-        <!-- Language Toggle -->
-        <!-- Language Toggle -->
-        <button type="button" (click)="langSvc.toggle()"
-          [attr.aria-label]="langSvc.lang() === 'es' ? 'Switch to English' : 'Cambiar a Español'"
-          class="group flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-teal dark:text-cream border border-teal/40 dark:border-cream/30 rounded-lg hover:bg-teal hover:text-cream dark:hover:bg-teal dark:hover:text-cream transition-all duration-200">
-          <!-- Globe icon -->
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      <button
+        type="button"
+        (click)="themeSvc.toggleTheme()"
+        [attr.aria-label]="themeSvc.theme() === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+        class="group hidden size-11 place-items-center rounded-xl border border-teal/20 bg-white/35 text-teal shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/60 focus-visible:ring-offset-2 focus-visible:ring-offset-cream dark:border-cream/15 dark:bg-cream/5 dark:text-cream dark:hover:bg-orange dark:hover:text-darker-brown dark:focus-visible:ring-offset-darker-brown sm:grid">
+        @if (themeSvc.theme() === 'dark') {
+          <svg class="size-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36-1.42 1.42M7.05 16.95l-1.41 1.41m12.72 0-1.42-1.41M7.05 7.05 5.64 5.64" />
+            <circle cx="12" cy="12" r="4" />
           </svg>
-          <span class="hidden sm:inline">{{ t().lang_toggle }}</span>
-        </button>
-        <!-- Mobile Menu Button -->
-        <button type="button" (click)="toggleMobileMenu()"
-          class="md:hidden p-2 rounded-lg text-dark-brown dark:text-cream hover:bg-teal dark:hover:bg-brown hover:text-cream transition-all duration-200"
-          [attr.aria-label]="isMobileMenuOpen() ? 'Cerrar menú' : 'Abrir menú'"
-          [attr.aria-expanded]="isMobileMenuOpen()">
-          @if (isMobileMenuOpen()) {
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        } @else {
+          <svg class="size-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.8 6.8 0 0 0 9.8 9.8Z" />
           </svg>
-          } @else {
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          }
-        </button>
-      </div>
-    </div>
+        }
+      </button>
 
-    <!-- Mobile Menu -->
-    @if (isMobileMenuOpen()) {
-    <div @menuAnimation class="md:hidden mt-2 pb-4 border-t border-teal dark:border-brown pt-4">
-      <div class="flex flex-col gap-4">
-        <a href="#inicio" (click)="closeMobileMenu()"
-          class="text-dark-brown dark:text-cream py-2 px-4 rounded-lg hover:bg-teal dark:hover:bg-brown hover:text-cream transition-all duration-200">
-          {{ t().nav_home }}
-        </a>
-        <a href="#sobre-mi" (click)="closeMobileMenu()"
-          class="text-dark-brown dark:text-cream py-2 px-4 rounded-lg hover:bg-teal dark:hover:bg-brown hover:text-cream transition-all duration-200">
-          {{ t().nav_about }}
-        </a>
-        <a href="#conocimientos-ti" (click)="closeMobileMenu()"
-          class="text-dark-brown dark:text-cream py-2 px-4 rounded-lg hover:bg-teal dark:hover:bg-brown hover:text-cream transition-all duration-200">
-          {{ t().nav_knowledge }}
-        </a>
-        <a href="#proyectos" (click)="closeMobileMenu()"
-          class="text-dark-brown dark:text-cream py-2 px-4 rounded-lg hover:bg-teal dark:hover:bg-brown hover:text-cream transition-all duration-200">
-          {{ t().nav_projects }}
-        </a>
-        <a href="#contacto" (click)="closeMobileMenu()"
-          class="text-dark-brown dark:text-cream py-2 px-4 rounded-lg hover:bg-teal dark:hover:bg-brown hover:text-cream transition-all duration-200">
-          {{ t().nav_contact }}
-        </a>
-      </div>
+      <button
+        type="button"
+        (click)="toggleMobileMenu()"
+        class="grid size-11 place-items-center rounded-xl border border-teal/20 bg-white/35 text-dark-brown shadow-sm transition-all duration-200 hover:bg-teal hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/60 focus-visible:ring-offset-2 focus-visible:ring-offset-cream dark:border-cream/15 dark:bg-cream/5 dark:text-cream dark:hover:bg-orange dark:hover:text-darker-brown dark:focus-visible:ring-offset-darker-brown lg:hidden"
+        [attr.aria-label]="isMobileMenuOpen() ? 'Cerrar menú' : 'Abrir menú'"
+        [attr.aria-expanded]="isMobileMenuOpen()">
+        @if (isMobileMenuOpen()) {
+          <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        } @else {
+          <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        }
+      </button>
     </div>
-    }
   </nav>
+
+  @if (isMobileMenuOpen()) {
+    <div
+      @menuAnimation
+      class="mx-auto mt-2 w-full max-w-7xl rounded-2xl border border-white/50 bg-cream/95 p-3 shadow-xl shadow-brown/15 backdrop-blur-xl dark:border-cream/10 dark:bg-darker-brown/95 lg:hidden">
+      <div class="grid gap-1">
+        @for (item of navItems(); track item.fragment) {
+          <a
+            routerLink="/"
+            [fragment]="item.fragment"
+            (click)="selectFragment(item.fragment)"
+            [class]="mobileNavItemClass(item.fragment)">
+            <span>{{ item.label }}</span>
+            <span class="text-xs opacity-55">#{{ item.fragment }}</span>
+          </a>
+        }
+      </div>
+
+      <button
+        type="button"
+        (click)="langSvc.toggle()"
+        class="mt-3 flex w-full items-center justify-center gap-2 rounded-xl border border-teal/25 px-4 py-3 text-sm font-bold text-teal transition-all duration-200 hover:bg-teal hover:text-cream dark:border-cream/15 dark:text-cream dark:hover:bg-orange dark:hover:text-darker-brown">
+        <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+        {{ t().lang_toggle }}
+      </button>
+
+      <button
+        type="button"
+        (click)="themeSvc.toggleTheme()"
+        class="mt-3 flex w-full items-center justify-center gap-2 rounded-xl border border-teal/25 px-4 py-3 text-sm font-bold text-teal transition-all duration-200 hover:bg-teal hover:text-cream dark:border-cream/15 dark:text-cream dark:hover:bg-orange dark:hover:text-darker-brown">
+        @if (themeSvc.theme() === 'dark') {
+          <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36-1.42 1.42M7.05 16.95l-1.41 1.41m12.72 0-1.42-1.41M7.05 7.05 5.64 5.64" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          {{ t().nav_theme_light }}
+        } @else {
+          <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.8 6.8 0 0 0 9.8 9.8Z" />
+          </svg>
+          {{ t().nav_theme_dark }}
+        }
+      </button>
+
+      <a
+        [href]="cvDevUrl()"
+        [download]="cvDevUrl().split('/').pop()"
+        (click)="closeMobileMenu()"
+        class="mt-3 flex items-center justify-center gap-2 rounded-xl bg-orange px-4 py-3 text-sm font-black text-darker-brown shadow-md shadow-orange/20 transition-all duration-200 hover:bg-teal hover:text-cream">
+        <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+        </svg>
+        {{ t().nav_cv }}
+      </a>
+    </div>
+  }
 </header>

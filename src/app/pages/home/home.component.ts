@@ -59,8 +59,8 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   private typingTimeout: ReturnType<typeof setTimeout> | null = null;
   private readonly typingTitles = computed(() =>
     this.langSvc.lang() === 'es'
-      ? ['Desarrollador Frontend', 'Desarrollador Full Stack', 'Co-fundador de FALCodeX', 'Diseñador UI/UX']
-      : ['Frontend Developer', 'Full Stack Developer', 'Co-founder of FALCodeX', 'UI/UX Designer']
+      ? ['Ingeniero de Software', 'Desarrollador Frontend', 'Lead Developer', 'Diseñador UI/UX']
+      : ['Software Engineer', 'Frontend Developer', 'Lead Developer', 'UI/UX Designer']
   );
 
   // Project filter
@@ -85,8 +85,8 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && !this.countersStarted) {
         this.countersStarted = true;
-        this.animateCounter(v => this.displayYear.set(v), 1, 1000);
-        this.animateCounter(v => this.displayProjects.set(v), 3, 1200);
+        this.animateCounter(v => this.displayYear.set(v), 2, 1000);
+        this.animateCounter(v => this.displayProjects.set(v), 9, 1200);
         observer.disconnect();
       }
     }, { threshold: 0.5 });
@@ -152,14 +152,14 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   filterBtnClass(value: ProjectFilter): string {
     return this.activeFilter() === value
-      ? 'px-5 py-2 rounded-xl text-sm font-semibold bg-orange text-cream shadow-md transition-all duration-300'
-      : 'px-5 py-2 rounded-xl text-sm font-semibold bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 text-teal dark:text-cream hover:border-orange hover:text-orange transition-all duration-300';
+      ? 'motion-button px-5 py-2 rounded-xl text-sm font-semibold bg-orange text-cream shadow-md transition-all duration-300'
+      : 'motion-button px-5 py-2 rounded-xl text-sm font-semibold bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 text-teal dark:text-cream hover:border-orange hover:text-orange transition-all duration-300';
   }
 
   readonly falcodexStack = [
-    'Angular', 'TypeScript', 'Tailwind CSS', '.NET 9', 'ASP.NET Core',
-    'Entity Framework', 'SQL Server', 'JWT', 'Capacitor', 'PWA',
-    'Clean Architecture', 'REST API', 'Figma', 'GitHub Actions'
+    'Angular 20/21', 'TypeScript', 'Tailwind CSS', '.NET 9', 'ASP.NET Core',
+    'Entity Framework Core', 'SQL Server', 'JWT', 'Stripe', 'Capacitor', 'PWA',
+    'Clean Architecture', 'REST API', 'Figma', 'v0', 'Vercel'
   ];
 
   onSubmit(): void {

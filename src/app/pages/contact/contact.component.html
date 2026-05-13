@@ -1,3 +1,42 @@
-<section class="grow flex flex-col w-full px-4 md:px-8 py-8">
-  <!-- Tu contenido aquí -->
+<section class="grow w-full px-4 md:px-8 lg:px-16 py-10">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+    <div appAnimateOnScroll
+      class="motion-card animate-fade-up lg:col-span-2 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-8 md:p-10">
+      <p class="text-orange font-semibold mb-2">{{ t().section_contact }}</p>
+      <h1 class="text-3xl md:text-5xl font-bold text-teal dark:text-cream mb-4">
+        {{ t().page_contact_title }}
+      </h1>
+      <p class="text-dark-brown dark:text-cream/80 text-lg mb-6">
+        {{ t().page_contact_intro }}
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a routerLink="/" fragment="contacto"
+          class="motion-button px-6 py-3 bg-orange text-cream font-semibold rounded-xl hover:bg-teal transition-colors duration-300">
+          {{ t().page_view_contact }}
+        </a>
+        <a routerLink="/" fragment="proyectos"
+          class="motion-button px-6 py-3 border-2 border-teal text-teal dark:text-cream font-semibold rounded-xl hover:bg-teal hover:text-cream transition-colors duration-300">
+          {{ t().page_view_projects }}
+        </a>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <a href="mailto:fmenesesavila1@gmail.com" appAnimateOnScroll
+        class="motion-card animate-fade-left animate-delay-100 bg-orange/10 dark:bg-orange/20 border border-orange/30 dark:border-orange/40 rounded-3xl p-6 block transition-transform duration-300">
+        <p class="text-sm text-dark-brown dark:text-cream/60">Email</p>
+        <p class="text-teal dark:text-cream font-medium break-all">fmenesesavila1&#64;gmail.com</p>
+      </a>
+      <a href="https://www.linkedin.com/in/fabricio-meneses-avila-11b631312/" target="_blank" rel="noopener noreferrer" appAnimateOnScroll
+        class="motion-card animate-fade-left animate-delay-200 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-6 block transition-transform duration-300">
+        <p class="text-sm text-dark-brown dark:text-cream/60">LinkedIn</p>
+        <p class="text-teal dark:text-cream font-medium">/in/fabricio-meneses-avila</p>
+      </a>
+      <a href="https://github.com/FabMeneses" target="_blank" rel="noopener noreferrer" appAnimateOnScroll
+        class="motion-card animate-fade-left animate-delay-300 bg-brown/10 dark:bg-brown/20 border border-brown/30 dark:border-brown/40 rounded-3xl p-6 block transition-transform duration-300">
+        <p class="text-sm text-dark-brown dark:text-cream/60">GitHub</p>
+        <p class="text-teal dark:text-cream font-medium">&#64;FabMeneses</p>
+      </a>
+    </div>
+  </div>
 </section>

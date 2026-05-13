@@ -1,31 +1,14 @@
-<div class="min-h-screen flex flex-col relative bg-cream dark:bg-darker-brown">
-  <!-- Círculos de gradiente animados -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <!-- Círculo 1 -->
-    <div
-      class="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-orange/20 dark:bg-amber-800/10 blur-3xl animate-blob">
-    </div>
-    <!-- Círculo 2 -->
-    <div
-      class="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-orange/15 dark:bg-orange/10 blur-3xl animate-blob2">
-    </div>
-    <!-- Círculo 3 -->
-    <div
-      class="absolute bottom-[-15%] left-[20%] w-[550px] h-[550px] rounded-full bg-brown/10 dark:bg-brown/10 blur-3xl animate-blob3">
-    </div>
-  </div>
+<div class="portfolio-shell min-h-screen flex flex-col relative bg-cream dark:bg-darker-brown">
+  <div class="portfolio-shell-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
 
-  <!-- Header fixed -->
   <app-header class="fixed top-0 left-0 right-0 z-50" />
 
-  <!-- Contenido por encima del gradiente -->
-  <div class="relative z-10 flex flex-col grow pt-16">
+  <div class="relative z-10 flex flex-col grow pt-20 md:pt-24">
     <main class="grow flex flex-col">
       <router-outlet />
     </main>
     <app-footer />
   </div>
 
-  <!-- Botón volver arriba -->
   <app-scroll-to-top />
 </div>

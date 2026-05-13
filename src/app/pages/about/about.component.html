@@ -1,3 +1,61 @@
-<section class="grow flex flex-col w-full px-4 md:px-8 py-8">
-  <!-- Tu contenido aquí -->
+<section class="grow w-full px-4 md:px-8 lg:px-16 py-10">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+    <div appAnimateOnScroll
+      class="motion-card animate-fade-up lg:col-span-2 bg-teal/10 dark:bg-teal/20 border border-teal/30 dark:border-teal/40 rounded-3xl p-8 md:p-10">
+      <p class="text-orange font-semibold mb-2">{{ t().section_about }}</p>
+      <h1 class="text-3xl md:text-5xl font-bold text-teal dark:text-cream mb-4">
+        {{ t().page_about_title }}
+      </h1>
+      <p class="text-dark-brown dark:text-cream/80 text-lg mb-6">
+        {{ t().page_about_intro }}
+      </p>
+      <div class="grid grid-cols-2 gap-3 mb-6 max-w-md">
+        <div class="rounded-2xl border border-teal/20 bg-cream/60 p-4 dark:border-cream/10 dark:bg-cream/5">
+          <p class="text-3xl font-black text-teal dark:text-cream">2</p>
+          <p class="text-sm font-semibold text-dark-brown/70 dark:text-cream/70">{{ t().stat_years }}</p>
+        </div>
+        <div class="rounded-2xl border border-orange/25 bg-orange/10 p-4 dark:border-orange/30">
+          <p class="text-3xl font-black text-orange">9</p>
+          <p class="text-sm font-semibold text-dark-brown/70 dark:text-cream/70">{{ t().stat_projects }}</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a routerLink="/" fragment="sobre-mi"
+          class="motion-button px-6 py-3 bg-orange text-cream font-semibold rounded-xl hover:bg-teal transition-colors duration-300">
+          {{ t().page_view_full_profile }}
+        </a>
+        <a routerLink="/" fragment="proyectos"
+          class="motion-button px-6 py-3 border-2 border-teal text-teal dark:text-cream font-semibold rounded-xl hover:bg-teal hover:text-cream transition-colors duration-300">
+          {{ t().page_view_projects }}
+        </a>
+      </div>
+    </div>
+
+    <div appAnimateOnScroll
+      class="motion-card animate-scale-up animate-delay-100 bg-orange/10 dark:bg-orange/20 border border-orange/30 dark:border-orange/40 rounded-3xl p-8 flex items-center justify-center">
+      <img ngSrc="/images/Fab.jpg" width="256" height="256" priority alt="Fabricio Meneses"
+        class="motion-soft-float w-48 md:w-56 aspect-square rounded-2xl object-cover shadow-lg" />
+    </div>
+
+    <div appAnimateOnScroll
+      class="motion-card animate-fade-up animate-delay-200 bg-cream dark:bg-dark-brown/50 border border-teal/20 dark:border-cream/20 rounded-3xl p-6">
+      <h2 class="text-xl font-semibold text-teal dark:text-cream mb-4">{{ t().about_edu_title }}</h2>
+      <p class="font-medium text-dark-brown dark:text-cream">{{ t().about_edu_degree }}</p>
+      <p class="text-sm text-dark-brown dark:text-cream/70">{{ t().about_edu_uni }}</p>
+      <p class="mt-4 text-sm text-dark-brown dark:text-cream/80">{{ t().about_edu_award }}</p>
+      <p class="mt-4 font-medium text-dark-brown dark:text-cream">{{ t().about_edu_cert }}</p>
+      <p class="text-sm text-dark-brown dark:text-cream/70">{{ t().about_edu_cert_sub }}</p>
+    </div>
+
+    <div appAnimateOnScroll
+      class="motion-card animate-fade-up animate-delay-300 lg:col-span-2 bg-brown/10 dark:bg-brown/20 border border-brown/30 dark:border-brown/40 rounded-3xl p-6">
+      <h2 class="text-xl font-semibold text-teal dark:text-cream mb-4">{{ t().about_services_title }}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-dark-brown dark:text-cream/80">
+        <p>{{ t().about_svc_1 }}</p>
+        <p>{{ t().about_svc_2 }}</p>
+        <p>{{ t().about_svc_3 }}</p>
+        <p>{{ t().about_svc_4 }}</p>
+      </div>
+    </div>
+  </div>
 </section>
